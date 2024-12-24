@@ -1,6 +1,6 @@
-# Dividend Web Scraping with Selenium
+# Dockerized Dividend Web Scraping with Selenium
 
-This repository contains a Python template for scraping data from websites using Selenium
+This repository contains a Dockerized Python template for scraping data from websites using Selenium
 The example website here is Yahoo Finance where we're looking for scraping the dividends of a list of companies
 
 ## Getting Started
