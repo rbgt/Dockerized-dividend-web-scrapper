@@ -12,10 +12,16 @@ def scrape_dividend_history(quotes):
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')  # Run in headless mode
     chrome_options.add_argument('--window-size=1920,1080')
+    chrome_options.add_argument('--ignore-ssl-errors=yes')
+    chrome_options.add_argument('--ignore-certificate-errors')
 
     # Initialize the driver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), 
-                            options=chrome_options)
+    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), 
+    #                         options=chrome_options)
+    driver = webdriver.Remote(
+            command_executor='http://localhost:4444/wd/hub',
+            options=chrome_options
+            )
 
     try:
         # Navigate to the page
