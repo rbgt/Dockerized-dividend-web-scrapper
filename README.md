@@ -17,6 +17,11 @@ Requirements for the software and other tools to build, test and push
 - [Poetry](https://python-poetry.org/)
 - [Github CLI](https://cli.github.com/)
 
+## Insallation
+
+* First we'll need to pull the selenium/standalone docker image in order to run the remote webdriver
+`docker pull --platform linux/x86_64 selenium/standalone-chrome`
+
 ## Versioning
 
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
