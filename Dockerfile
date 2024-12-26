@@ -24,7 +24,7 @@ WORKDIR /app
 # into this layer.
 RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
-    python -m pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt
 
 # Copy the source code into the container.
 COPY . .
@@ -33,4 +33,5 @@ COPY . .
 EXPOSE 8000
 
 # Run the application.
-CMD poetry run python3 webscraping/yahoo_finance_scrape.py
+CMD ["/bin/bash"]
+# command to run : poetry run python3 webscraping/yahoo_finance_scrape.py
