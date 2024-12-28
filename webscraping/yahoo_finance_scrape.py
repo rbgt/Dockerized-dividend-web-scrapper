@@ -19,7 +19,7 @@ def scrape_dividend_history(quotes):
     # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), 
     #                         options=chrome_options)
     driver = webdriver.Remote(
-            command_executor='http://172.17.0.2:4444/wd/hub',
+            command_executor='http://172.17.0.2:4444/wd/hub', # Change with the selenium' container IP adress
             options=chrome_options
             )
 
