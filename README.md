@@ -26,16 +26,16 @@ Requirements for the software and other tools to build, test and push
 `docker build -t dockerized-webscraper .`
 
 * Once the images are built, we can run the image containers :
-- Minimalistically : `docker run -v /dev/shm:/dev/shm selenium/standalone-chrome`
-- Detached mode : `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome`
+    * Minimalistically : `docker run -v /dev/shm:/dev/shm selenium/standalone-chrome`
+    * Detached mode : `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome`
 
-- To run the webscraper interactively : 
+* To run the webscraper interactively : 
 `docker run -it dockerized-webscraper`
 
-- Launch the webscraper : 
+* Launch the webscraper : 
 `python webscraper/yahoo_finance_scrape.py`
 
-- Get the scraped dividends : 
+* Get the scraped dividends : 
 `cat actions_dividends.csv`
 
 ## Stop & cleaning
