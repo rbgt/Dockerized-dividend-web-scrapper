@@ -22,6 +22,36 @@ Requirements for the software and other tools to build, test and push
 * First we'll need to pull the selenium/standalone docker image in order to run the remote webdriver
 `docker pull --platform linux/x86_64 selenium/standalone-chrome`
 
+* Then build the project's container :
+`docker build -t dockerized-webscraper .`
+
+* Once the images are built, we can run the image containers :
+- Minimalistically : `docker run -v /dev/shm:/dev/shm selenium/standalone-chrome`
+- Detached mode : `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome`
+
+- To run the webscraper interactively : 
+`docker run -it dockerized-webscraper`
+
+- Launch the webscraper : 
+`python webscraper/yahoo_finance_scrape.py`
+
+- Get the scraped dividends : 
+`cat actions_dividends.csv`
+
+## Stop & cleaning
+
+* To stop the containers :
+`docker stop selenium/standalone-chrome`
+
+* To remove any non-running container :
+`docker rm -f (container id)`
+
+* To check all running containers are removed :
+`docker ps -a`
+
+* To check the built Docker images :
+`docker images`
+
 ## Versioning
 
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
