@@ -29,6 +29,9 @@ Requirements for the software and other tools to build, test and push
     * Minimalistically : `docker run -v /dev/shm:/dev/shm selenium/standalone-chrome`
     * Detached mode : `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome`
 
+
+> **_NOTE:_** the `/dev/shm:/dev/shm` allows the container to use the host's shared memory in order to call the Selenium's Chrome Webdriver
+
 * To run the webscraper interactively : 
 `docker run -it dockerized-webscraper`
 
