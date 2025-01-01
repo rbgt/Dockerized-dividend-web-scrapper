@@ -55,6 +55,9 @@ Requirements for the software and other tools to build, test and push
 * To check the built Docker images :
 `docker images`
 
+* To remove an image :
+`docker rmi (image id)`
+
 ## Versioning
 
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
