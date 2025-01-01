@@ -55,8 +55,8 @@ Requirements for the software and other tools to build, test and push
 * To check the built Docker images :
 `docker images`
 
-* To remove an image :
-`docker rmi (image id)`
+* To remove an image (e.g: remove the selenium standalone pulled image):
+`docker rmi selenium/standalone-chrome`
 
 ## Versioning
 
