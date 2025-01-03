@@ -25,7 +25,9 @@ Requirements for the software and other tools to build, test and push
 * Then build the project's container :
 `docker build -t dockerized-webscraper .`
 
-* Once the images are built, we can run the image containers :
+* Create a volume to share data between containers : `docker volume create shared_data`
+
+* Once the images are built and the volume is created, we can run the image containers :
     * Minimalistically : `docker run -v /dev/shm:/dev/shm selenium/standalone-chrome`
     * Detached mode : `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome`
 
@@ -33,7 +35,7 @@ Requirements for the software and other tools to build, test and push
 > **_NOTE:_** the `/dev/shm:/dev/shm` allows the container to use the host's shared memory in order to call the Selenium's Chrome Webdriver
 
 * To run the webscraper interactively : 
-`docker run -it dockerized-webscraper`
+`docker run -v shared_data:/data -it dockerized-webscraper`
 
 * Launch the webscraper : 
 `python webscraper/yahoo_finance_scrape.py`
